@@ -1,0 +1,9 @@
+{
+  "experimentalSourceRewriting": true,
+  "defaultCommandTimeout": 20000,
+  "modifyObstructiveCode": false,
+  "env": {
+    "url": "https://storymaps.arcgis.com/"
+  },
+  "projectId": "3n68cw"
+}

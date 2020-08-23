@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-08-23T03:02:46.715Z",
+    "end": "2020-08-23T03:03:25.884Z",
+    "duration": 39169,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "02c5b0d9-8482-4904-9b9e-9f8d2606f1dd",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\ARCGISStoryMaps.js",
+      "file": "cypress\\integration\\examples\\ARCGISStoryMaps.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ed5e03fc-d067-46c6-8cf6-3d219268210e",
+          "title": "ARCGIS StoryMaps test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Creating New Story",
+              "fullTitle": "ARCGIS StoryMaps test suite Creating New Story",
+              "timedOut": null,
+              "duration": 34416,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var homePage = new _HomePage[\"default\"]();\nvar signInPage = new _SignInPage[\"default\"]();\nvar dashboardPage = new _DashboardPage[\"default\"]();\nvar newStoryPage = new _NewStoryPage[\"default\"]();\nvar filePath = 'sampleFile.jpeg';\nhomePage.getSignIn().click();\nsignInPage.getUsername().type(this.data.username).should('have.value', this.data.username);\nsignInPage.getPassword().type(this.data.password).should('have.value', this.data.password);\nsignInPage.getSignInButton().click();\ndashboardPage.getProfileImage().should('be.visible');\ndashboardPage.getNewStory().click();\ndashboardPage.getStartFromScratch().click();\nnewStoryPage.getStoryTitle().type(this.data.storytitle).should('have.value', this.data.storytitle);\nnewStoryPage.getStoryIntroduction().type(this.data.storyintroduction).should('have.value', this.data.storyintroduction);\nnewStoryPage.getAddImageorVideo().click();\nnewStoryPage.getDragandDropFiles().attachFile(filePath, {\n  subjectType: 'drag-n-drop'\n});\nnewStoryPage.getUploadFile().then(function (fileName) {\n  var uploadFileName = fileName.text();\n  expect(uploadFileName).to.equal('sampleFile.jpeg');\n});\nnewStoryPage.getAddButton().click();\nnewStoryPage.getDeleteCoverMedia().should('be.visible');",
+              "err": {},
+              "uuid": "48fe817f-f9a4-4ed3-beee-49519aa53d8f",
+              "parentUUID": "ed5e03fc-d067-46c6-8cf6-3d219268210e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "48fe817f-f9a4-4ed3-beee-49519aa53d8f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 34416,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.1.0"
+    }
+  }
+}
